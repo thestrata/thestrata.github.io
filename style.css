@@ -1,24 +1,27 @@
-/* =========================
-   RESET
-========================= */
+/* --------------------
+   CSS RESET
+-------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   COLOR SYSTEM
-========================= */
+/* --------------------
+   VARIABLES (LIGHT MODE)
+-------------------- */
 :root {
-  --primary: #ccff00;   /* lime accent */
-  --black: #000000;
-  --text: #111111;
-  --muted: #555555;
+  --accent: #ccff00;
+
   --bg: #ffffff;
+  --black: #0b0b0b;
+  --text: #0b0b0b;
+  --muted: #666666;
 }
 
-/* DARK MODE */
+/* --------------------
+   DARK MODE VARIABLES
+-------------------- */
 body.dark {
   --bg: #0b0b0b;
   --black: #ffffff;
@@ -26,121 +29,136 @@ body.dark {
   --muted: #aaaaaa;
 }
 
-/* =========================
-   BASE
-========================= */
+/* --------------------
+   BASE STYLES
+-------------------- */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }
 
-/* =========================
-   LAYOUT
-========================= */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 0 24px;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-h1, h2, h3 {
+/* --------------------
+   MODE TOGGLE
+-------------------- */
+.mode-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: 1px solid var(--black);
   color: var(--black);
-  font-weight: 500;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-h1 {
-  font-size: 52px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  max-width: 900px;
-}
-
-h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-p {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 640px;
-}
-
-/* =========================
+/* --------------------
    HERO
-========================= */
+-------------------- */
 .hero {
-  background-color: var(--bg);
+  padding: 140px 0 120px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+  max-width: 900px;
 }
 
 .hero p {
   margin-top: 24px;
-  font-size: 20px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 600px;
 }
 
-/* CTA */
+/* --------------------
+   PRIMARY BUTTON
+-------------------- */
 .btn-primary {
   display: inline-block;
-  margin-top: 40px;
-  padding: 14px 32px;
-  background-color: var(--primary);
-  color: var(--black);
+  margin-top: 32px;
+  padding: 14px 28px;
+  background-color: var(--accent);
+  color: #0b0b0b;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  border-radius: 2px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
-/* =========================
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* --------------------
    SERVICES
-========================= */
+-------------------- */
 .services {
-  background-color: var(--bg);
+  padding: 120px 0;
+}
+
+.services h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 48px;
 }
 
 .service-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.service h3 {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .service p {
-  font-size: 17px;
+  margin-top: 12px;
+  color: var(--muted);
 }
 
-/* =========================
+/* --------------------
    ABOUT
-========================= */
+-------------------- */
 .about {
-  background-color: var(--bg);
+  padding: 120px 0;
+}
+
+.about h2 {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .about p {
-  font-size: 20px;
+  margin-top: 24px;
+  max-width: 700px;
+  color: var(--muted);
 }
 
-/* =========================
+/* --------------------
    CONTACT
-========================= */
+-------------------- */
 .contact {
-  background-color: var(--bg);
+  padding: 120px 0;
+}
+
+.contact h2 {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .contact p {
-  font-size: 20px;
-}
-
-.contact strong {
-  color: var(--black);
+  margin-top: 16px;
+  font-size: 18px;
 }
