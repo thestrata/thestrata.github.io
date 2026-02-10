@@ -1,0 +1,138 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+:root {
+  --primary: #ccff00;   /* lime accent */
+  --black: #000000;
+  --text: #111111;
+  --muted: #555555;
+  --bg: #ffffff;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+  color: var(--black);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  background-color: var(--bg);
+}
+
+.hero p {
+  margin-top: 24px;
+  font-size: 20px;
+}
+
+/* CTA */
+.btn-primary {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 32px;
+  background-color: var(--primary);
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services {
+  background-color: var(--bg);
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.service p {
+  font-size: 17px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+  background-color: var(--bg);
+}
+
+.about p {
+  font-size: 20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  background-color: var(--bg);
+}
+
+.contact p {
+  font-size: 20px;
+}
+
+.contact strong {
+  color: var(--black);
+}
