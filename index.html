@@ -9,12 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-<button class="mode-toggle" onclick="toggleMode()">
-  Toggle mode
-</button>
+
+  <!-- MODE TOGGLE -->
+  <button class="mode-toggle" onclick="toggleMode()">
+    Toggle mode
+  </button>
+
   <!-- HERO -->
   <section class="hero">
     <div class="container">
@@ -53,7 +56,7 @@
     <div class="container">
       <h2>Why Thestrata</h2>
       <p>
-        Most agencies chase trends. We build systems.  
+        Most agencies chase trends. We build systems.<br>
         Our work is grounded in strategy, not guesswork.
       </p>
     </div>
@@ -62,4 +65,17 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
-      <h2>
+      <h2>Let’s talk</h2>
+      <p>Email us at <strong>hello@thestrata.com</strong></p>
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
