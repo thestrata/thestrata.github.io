@@ -65,7 +65,8 @@ body {
 -------------------- */
 .hero {
   padding: 140px 0 120px;
-   padding-top: 160px;
+   padding-top: 160px
+   letter-spacing: -0.02em;
 }
 
 .hero h1 {
@@ -208,4 +209,26 @@ section {
 .service p {
   line-height: 1.6;
 }
+
+/* Subtle section contrast */
+.services,
+.about {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .services,
+body.dark .about {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Accent divider */
+.hero::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 48px;
+}
+
 
