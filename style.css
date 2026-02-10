@@ -18,6 +18,14 @@
   --bg: #ffffff;
 }
 
+/* DARK MODE */
+body.dark {
+  --bg: #0b0b0b;
+  --black: #ffffff;
+  --text: #eaeaea;
+  --muted: #aaaaaa;
+}
+
 /* =========================
    BASE
 ========================= */
