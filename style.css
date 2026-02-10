@@ -231,4 +231,15 @@ body.dark .about {
   margin-top: 48px;
 }
 
+/* Smooth transitions */
+a,
+button,
+.service {
+  transition: all 0.25s ease;
+}
+
+/* Service hover lift */
+.service:hover {
+  transform: translateY(-4px);
+}
 
