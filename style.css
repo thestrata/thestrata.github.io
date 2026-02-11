@@ -183,30 +183,6 @@ nav a:hover::after {
   overflow: hidden;
 }
 
-/* HERO CURSOR GLOW (ONLY HERE) */
-.hero::after {
-  content: "";
-  position: absolute;
-  left: var(--glow-x);
-  top: var(--glow-y);
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(204,255,0,0.28) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.hero.glow-active::after {
-  opacity: 1;
-}
-
-.hero:hover::after {
-  opacity: 1;
-}
-
 .hero h1 {
   font-size: 56px;
   font-weight: 600;
@@ -316,3 +292,28 @@ body.dark .about {
     font-size: 40px;
   }
 }
+
+/* =====================
+   GLOBAL SUBTLE CURSOR GLOW
+===================== */
+
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;   /* smaller */
+  height: 220px;  /* smaller */
+  background: radial-gradient(
+    circle,
+    rgba(204,255,0,0.12) 0%,
+    rgba(204,255,0,0.08) 30%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  z-index: 0;
+  opacity: 0.8;
+}
+
