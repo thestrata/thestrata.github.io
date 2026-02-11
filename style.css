@@ -185,18 +185,22 @@ nav a:hover::after {
 
 /* HERO CURSOR GLOW (ONLY HERE) */
 .hero::after {
-   left: var(--left);
-  top: var(--top);
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(204,255,0,0.25) 0%, transparent 70%);
+  left: var(--glow-x);
+  top: var(--glow-y);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(204,255,0,0.28) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
-  opacity: 0;
   transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.hero.glow-active::after {
+  opacity: 1;
 }
 
 .hero:hover::after {
