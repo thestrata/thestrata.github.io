@@ -81,52 +81,39 @@
 </section>
 
 <script>
-function toggleMode() {
-  document.body.classList.toggle("dark");
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-/* GLOBAL CURSOR GLOW */
-const glow = document.querySelector(".cursor-glow");
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+  }
 
-document.addEventListener("mousemove", (e) => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
+  window.toggleMode = toggleMode; // keeps button working
 
-/* Slight intensify over interactive elements */
-const interactiveElements = document.querySelectorAll("a, button");
+  const glow = document.querySelector(".cursor-glow");
 
-interactiveElements.forEach(el => {
-  el.addEventListener("mouseenter", () => {
-    glow.style.width = "280px";
-    glow.style.height = "280px";
-    glow.style.opacity = "1";
+  document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
   });
 
-  el.addEventListener("mouseleave", () => {
-    glow.style.width = "220px";
-    glow.style.height = "220px";
-    glow.style.opacity = "0.8";
+  const interactive = document.querySelectorAll("a, button");
+
+  interactive.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      glow.style.width = "260px";
+      glow.style.height = "260px";
+      glow.style.opacity = "1";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      glow.style.width = "220px";
+      glow.style.height = "220px";
+      glow.style.opacity = "0.8";
+    });
   });
-});
 
-/* Scroll reveal */
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
 });
 </script>
-
-
   <div class="cursor-glow"></div>
-
 </body>
 </html>
