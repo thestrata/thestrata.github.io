@@ -70,7 +70,7 @@ body::before {
 -------------------- */
 .mode-toggle {
   position: fixed;
-  top: 24px;
+  top: 28px;
   right: 24px;
   background: none;
   border: 1px solid var(--black);
@@ -78,6 +78,38 @@ body::before {
   padding: 8px 14px;
   font-size: 14px;
   cursor: pointer;
+  z-index: 20;
+}
+
+/* --------------------
+   NAVIGATION
+-------------------- */
+.site-header {
+  padding: 32px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: var(--black);
 }
 
 /* --------------------
@@ -192,36 +224,6 @@ body::before {
   font-size: 18px;
 }
 
-
-/* --------------------
-   NAVIGATION
--------------------- */
-.site-header {
-  padding: 32px 0;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-nav a {
-  margin-left: 32px;
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-nav a:hover {
-  color: var(--black);
-}
-
 /* Improve vertical rhythm */
 section {
   padding: 140px 0;
@@ -267,5 +269,11 @@ button,
 /* Service hover lift */
 .service:hover {
   transform: translateY(-4px);
+}
+
+@media (max-width: 900px) {
+  nav a {
+    margin-left: 18px;
+  }
 }
 
