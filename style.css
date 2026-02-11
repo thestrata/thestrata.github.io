@@ -185,6 +185,8 @@ nav a:hover::after {
 
 /* HERO CURSOR GLOW (ONLY HERE) */
 .hero::after {
+   left: var(--left);
+  top: var(--top);
   content: "";
   position: absolute;
   width: 400px;
