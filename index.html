@@ -17,12 +17,10 @@
 
 <header class="site-header">
   <div class="nav-container">
-
     <div class="logo">
       <img src="logo-black.png" alt="Thestrata logo" class="logo-light">
       <img src="logo-white.png" alt="Thestrata logo" class="logo-dark">
     </div>
-
     <div class="nav-right">
       <nav>
         <a href="#services">Services</a>
@@ -31,15 +29,52 @@
       </nav>
       <button class="mode-toggle" onclick="toggleMode()">☼</button>
     </div>
-
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h1>YouTube strategy that works</h1>
-    <p>Content Strategy Consultation for brands and creators who care about outcomes</p>
+    <h1>YouTube strategy for creators who care about impact</h1>
+    <p>Trusted by health experts, educators, and emerging brands.</p>
     <a href="#contact" class="btn-primary">Let’s work together</a>
+  </div>
+</section>
+
+<!-- NEW SECTION: APPROACH -->
+<section class="approach reveal">
+  <div class="container">
+    <h2>Our Approach</h2>
+
+    <div class="approach-grid">
+
+      <div class="approach-item">
+        <h3>Strategy</h3>
+        <p>
+          Good strategy removes guesswork.
+          We audit your channel to identify what’s holding it back —
+          then build a clear, practical plan for sustainable growth.
+        </p>
+      </div>
+
+      <div class="approach-item">
+        <h3>Research</h3>
+        <p>
+          Growth isn’t accidental.
+          We analyze what’s working in your space and adapt proven
+          patterns to fit your voice and audience.
+        </p>
+      </div>
+
+      <div class="approach-item">
+        <h3>Packaging</h3>
+        <p>
+          YouTube is a battle for attention.
+          We craft titles and thumbnails that earn the click —
+          driven by psychology, clarity, and precision.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -85,13 +120,11 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* Dark Mode Toggle */
   function toggleMode() {
     document.body.classList.toggle("dark");
   }
   window.toggleMode = toggleMode;
 
-  /* Cursor Glow Movement */
   const glow = document.querySelector(".cursor-glow");
 
   document.addEventListener("mousemove", (e) => {
@@ -99,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     glow.style.top = e.clientY + "px";
   });
 
-  /* Interactive Elements Glow Boost */
   const interactive = document.querySelectorAll("a, button");
 
   interactive.forEach(el => {
@@ -116,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* Scroll Reveal - Clean & Modern */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
