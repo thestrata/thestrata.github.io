@@ -93,7 +93,7 @@ body::before {
 
 /* Logo images */
 .logo img {
-  height: 28px;   /* change to 32px if you want slightly bigger */
+  height: 34px;   /* change to 32px if you want slightly bigger */
   width: auto;
   display: block;
 }
