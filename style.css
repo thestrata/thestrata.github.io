@@ -33,7 +33,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-
   animation: fadeIn 0.8s ease forwards;
   opacity: 0;
 }
@@ -86,19 +85,23 @@ body::before {
   align-items: center;
 }
 
+/* ===== FIXED LOGO SYSTEM ===== */
+
 .logo {
-  display: flex;
-  align-items: center;
+  position: relative;
+  height: 52px; /* 🔥 change this to control size (48–56 ideal) */
+  display: inline-block;
 }
 
-/* Logo images */
 .logo img {
-  height: 48px;   /* premium size */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: auto;
-  display: block;
 }
 
-/* Logo visibility control */
+/* Visibility control */
 .logo-light {
   display: block;
 }
@@ -108,12 +111,14 @@ body::before {
 }
 
 body.dark .logo-light {
-  display: none !important;
+  display: none;
 }
 
 body.dark .logo-dark {
-  display: block !important;
+  display: block;
 }
+
+/* ===================== */
 
 .nav-right {
   display: flex;
@@ -162,7 +167,7 @@ nav a:hover::after {
 .mode-toggle:hover {
   background: var(--accent);
   color: #000;
-  border-color: var(--accent);
+  border-color: var(--accent;
 }
 
 /* =====================
