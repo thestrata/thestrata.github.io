@@ -93,25 +93,27 @@ body::before {
 
 /* Logo images */
 .logo img {
-  height: 34px;   /* change to 32px if you want slightly bigger */
+  height: 48px;   /* premium size */
   width: auto;
   display: block;
 }
 
-/* Hide dark logo by default */
+/* Logo visibility control */
+.logo-light {
+  display: block;
+}
+
 .logo-dark {
   display: none;
 }
 
-/* Show white logo in dark mode */
 body.dark .logo-light {
-  display: none;
+  display: none !important;
 }
 
 body.dark .logo-dark {
-  display: block;
+  display: block !important;
 }
-
 
 .nav-right {
   display: flex;
