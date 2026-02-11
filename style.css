@@ -226,6 +226,35 @@ section {
   padding: 140px 0;
 }
 
+
+.proof {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.proof-text {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+}
+
+.proof-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.proof-stats h3 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}-
+
+.proof-stats p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
 /* =====================
    SCROLL REVEAL
 ===================== */
