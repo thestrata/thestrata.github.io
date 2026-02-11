@@ -474,6 +474,30 @@ body.dark .case-card {
   cursor: pointer;
 }
 
+/* ===== RESPONSIVE SLIDER ===== */
+
+@media (max-width: 1024px) {
+  .case-card {
+    flex: 0 0 calc((100% - 30px) / 2);
+    max-width: calc((100% - 30px) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .case-controls {
+    gap: 10px;
+  }
+
+  .case-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
 
 /* =====================
    CONTACT
