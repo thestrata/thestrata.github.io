@@ -226,6 +226,25 @@ section {
   padding: 140px 0;
 }
 
+/* =====================
+   SCROLL REVEAL
+===================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  transition: opacity 0.9s ease,
+              transform 0.9s ease,
+              filter 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
 .services,
 .about {
   background-color: rgba(0,0,0,0.02);
