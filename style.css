@@ -64,16 +64,49 @@ body {
    HERO
 -------------------- */
 .hero {
-  padding: 140px 0 120px;
-   padding-top: 160px
+  position: relative;
+  padding: 160px 0 120px;
+  overflow: hidden;
+}
+
+/* Lime glow background */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(204, 255, 0, 0.25) 0%,
+    rgba(204, 255, 0, 0.15) 40%,
+    transparent 70%
+  );
+  top: -250px;
+  right: -250px;
+  z-index: 0;
+}
+
+/* Stronger glow in dark mode */
+body.dark .hero::before {
+  background: radial-gradient(
+    circle,
+    rgba(204, 255, 0, 0.35) 0%,
+    rgba(204, 255, 0, 0.2) 40%,
+    transparent 70%
+  );
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: 56px;
   font-weight: 600;
-  line-height: 1.1;
-  max-width: 900px;
-   letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 780px;
 }
 
 .hero p {
