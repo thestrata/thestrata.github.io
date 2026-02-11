@@ -85,6 +85,31 @@ function toggleMode() {
   document.body.classList.toggle("dark");
 }
 
+/* GLOBAL CURSOR GLOW */
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+/* Slight intensify over interactive elements */
+const interactiveElements = document.querySelectorAll("a, button");
+
+interactiveElements.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    glow.style.width = "280px";
+    glow.style.height = "280px";
+    glow.style.opacity = "1";
+  });
+
+  el.addEventListener("mouseleave", () => {
+    glow.style.width = "220px";
+    glow.style.height = "220px";
+    glow.style.opacity = "0.8";
+  });
+});
+
 /* Scroll reveal */
 const reveals = document.querySelectorAll(".reveal");
 
@@ -99,5 +124,9 @@ window.addEventListener("scroll", () => {
   });
 });
 </script>
+
+
+  <div class="cursor-glow"></div>
+
 </body>
 </html>
