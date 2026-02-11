@@ -91,6 +91,21 @@ document.addEventListener("mousemove", (e) => {
   glow.style.top = e.clientY + "px";
 });
 
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove", (e) => {
+  const rect = hero.getBoundingClientRect();
+  hero.style.setProperty("--x", e.clientX - rect.left + "px");
+  hero.style.setProperty("--y", e.clientY - rect.top + "px");
+  hero.style.setProperty("--opacity", 1);
+  hero.style.setProperty("--left", e.clientX - rect.left + "px");
+  hero.style.setProperty("--top", e.clientY - rect.top + "px");
+});
+
+hero.addEventListener("mouseleave", () => {
+  hero.style.setProperty("--opacity", 0);
+});
+
 /* Hero subtle movement */
 const hero = document.querySelector(".hero");
 
