@@ -1,14 +1,12 @@
 /* =====================
    RESET
 ===================== */
-html, body {
-  overflow-x: hidden;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* =====================
    VARIABLES
 ===================== */
@@ -18,11 +16,13 @@ html, body {
   --text: #0b0b0b;
   --muted: #666666;
 }
+
 body.dark {
   --bg: #0b0b0b;
   --text: #eaeaea;
   --muted: #aaaaaa;
 }
+
 /* =====================
    BASE
 ===================== */
@@ -37,9 +37,11 @@ body {
   opacity: 0;
   position: relative;
 }
+
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
 /* =====================
    STRONG TOP RIGHT GRADIENT
    (starts from actual corner)
@@ -61,11 +63,13 @@ body::before {
   pointer-events: none;
   animation: pulse 6s ease-in-out infinite;
 }
+
 @keyframes pulse {
   0% { opacity: 0.75; }
   50% { opacity: 1; }
   100% { opacity: 0.75; }
 }
+
 /* =====================
    CONTAINERS
 ===================== */
@@ -74,6 +78,7 @@ body::before {
   margin: 0 auto;
   padding: 0 40px; /* normal content padding */
 }
+
 /* Header tighter */
 .nav-container {
   max-width: 1100px;
@@ -83,6 +88,7 @@ body::before {
   justify-content: space-between;
   align-items: center;
 }
+
 /* =====================
    NAV
 ===================== */
@@ -91,12 +97,14 @@ body::before {
   position: relative;
   z-index: 10;
 }
+
 /* ===== LOGO ===== */
 .logo {
   position: relative;
   height: 38px;
   display: inline-block;
 }
+
 .logo img {
   position: absolute;
   top: 0;
@@ -104,15 +112,19 @@ body::before {
   height: 100%;
   width: auto;
 }
+
 .logo-light { display: block; }
 .logo-dark { display: none; }
+
 body.dark .logo-light { display: none; }
 body.dark .logo-dark { display: block; }
+
 /* ===== NAV LINKS ===== */
 .nav-right {
   display: flex;
   align-items: center;
 }
+
 nav a {
   position: relative;
   margin-left: 28px;
@@ -121,9 +133,11 @@ nav a {
   font-size: 15px;
   transition: all 0.3s ease;
 }
+
 nav a:hover {
   color: var(--text);
 }
+
 nav a::after {
   content: "";
   position: absolute;
@@ -134,9 +148,11 @@ nav a::after {
   bottom: -4px;
   transition: width 0.3s ease;
 }
+
 nav a:hover::after {
   width: 100%;
 }
+
 /* ===== TOGGLE ===== */
 .mode-toggle {
   background: none;
@@ -148,14 +164,17 @@ nav a:hover::after {
   margin-left: 24px;
   transition: all 0.25s ease;
 }
+
 .mode-toggle:hover {
   background: var(--accent);
   color: #000;
   border-color: var(--accent);
 }
+
 .mode-toggle:active {
   transform: scale(0.94);
 }
+
 /* =====================
    HERO
 ===================== */
@@ -164,6 +183,7 @@ nav a:hover::after {
   position: relative;
   overflow: hidden;
 }
+
 .hero h1 {
   font-size: 56px;
   font-weight: 600;
@@ -171,12 +191,14 @@ nav a:hover::after {
   letter-spacing: -0.03em;
   max-width: 750px;
 }
+
 .hero p {
   margin-top: 28px;
   font-size: 19px;
   color: var(--muted);
   max-width: 600px;
 }
+
 .btn-primary {
   display: inline-block;
   margin-top: 36px;
@@ -187,45 +209,56 @@ nav a:hover::after {
   font-weight: 600;
   transition: all 0.25s ease;
 }
+
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(204,255,0,0.45);
 }
+
 .btn-primary:active {
   transform: translateY(0) scale(0.96);
 }
+
 /* =====================
    SECTIONS
 ===================== */
 section {
   padding: 140px 0;
 }
+
+
 .proof {
   padding: 80px 0;
   text-align: center;
 }
+
 .proof-text {
   font-size: 18px;
   color: var(--muted);
   margin-bottom: 50px;
 }
+
 .proof-stats {
   display: flex;
   justify-content: center;
   gap: 80px;
   flex-wrap: wrap;
 }
+
 .proof-stats h3 {
   font-size: 32px;
   margin-bottom: 8px;
 }-
+
 .proof-stats p {
   font-size: 14px;
   color: var(--muted);
 }
+
 /* =====================
    SCROLL REVEAL
 ===================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -234,19 +267,23 @@ section {
               transform 0.9s ease,
               filter 0.9s ease;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
 }
+
 .services,
 .about {
   background-color: rgba(0,0,0,0.02);
 }
+
 body.dark .services,
 body.dark .about {
   background-color: rgba(255,255,255,0.04);
 }
+
 /* =====================
    SERVICES
 ===================== */
@@ -257,40 +294,49 @@ body.dark .about {
   font-weight: 600;
   margin-bottom: 48px;
 }
+
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
 }
+
 .service {
   padding: 28px;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
+
 .service:hover {
   transform: translateY(-8px);
   background: rgba(204,255,0,0.08);
 }
+
 .service h3 {
   font-size: 20px;
   margin-bottom: 8px;
 }
+
 .service p {
   color: var(--muted);
 }
+
 .case-studies {
   padding: 140px 0;
 }
+
 .case-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
 }
+
 .case-controls {
   display: flex;
   gap: 16px;
 }
+
 .case-btn {
   width: 42px;
   height: 42px;
@@ -299,19 +345,23 @@ body.dark .about {
   cursor: pointer;
   transition: all 0.25s ease;
 }
+
 .case-btn:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: #000;
 }
+
 .case-wrapper {
   overflow: hidden;
 }
+
 .case-track {
   display: flex;
   gap: 30px;
   transition: transform 0.6s ease;
 }
+
 .case-card {
   flex: 0 0 calc((100% - 80px) / 3);
   max-width: calc((100% - 80px) / 3);
@@ -321,34 +371,42 @@ body.dark .about {
   background: rgba(0,0,0,0.02);
   transition: transform 0.3s ease;
 }
+
 body.dark .case-card {
   background: rgba(255,255,255,0.04);
   border-color: rgba(255,255,255,0.08);
 }
+
 .case-card:hover {
   transform: translateY(-6px);
 }
+
 .case-card h3 {
   font-size: 20px;
   margin-bottom: 12px;
 }
+
 .metric {
   font-weight: 600;
   margin-bottom: 12px;
 }
+
 .case-card p {
   color: var(--muted);
 }
+
 .case-card {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
+
 .case-hook {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
 }
+
 .case-image {
   width: 100%;
   height: 180px;
@@ -357,15 +415,18 @@ body.dark .case-card {
   cursor: pointer;
   position: relative;
 }
+
 .case-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
+
 .case-image:hover img {
   transform: scale(1.05);
 }
+
 .case-section h4 {
   font-size: 12px;
   text-transform: uppercase;
@@ -373,16 +434,19 @@ body.dark .case-card {
   color: var(--accent);
   margin-bottom: 6px;
 }
+
 .case-section p,
 .case-section li {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.6;
 }
+
 .case-section ul {
   padding-left: 16px;
   margin: 0;
 }
+
 .image-modal {
   display: none;
   position: fixed;
@@ -395,10 +459,12 @@ body.dark .case-card {
   justify-content: center;
   align-items: center;
 }
+
 .image-modal img {
   max-width: 85%;
   max-height: 85%;
 }
+
 .close-modal {
   position: absolute;
   top: 30px;
@@ -407,26 +473,32 @@ body.dark .case-card {
   color: #fff;
   cursor: pointer;
 }
+
 /* ===== RESPONSIVE SLIDER ===== */
+
 @media (max-width: 1024px) {
   .case-card {
     flex: 0 0 calc((100% - 30px) / 2);
     max-width: calc((100% - 30px) / 2);
   }
 }
+
 @media (max-width: 640px) {
   .case-card {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
   .case-controls {
     gap: 10px;
   }
+
   .case-btn {
     width: 36px;
     height: 36px;
   }
 }
+
 /* =====================
    CONTACT
 ===================== */
@@ -434,6 +506,7 @@ body.dark .case-card {
   font-size: 18px;
   color: var(--muted);
 }
+
 /* =====================
    RESPONSIVE
 ===================== */
@@ -441,13 +514,17 @@ body.dark .case-card {
   nav a {
     margin-left: 16px;
   }
+
   .hero h1 {
     font-size: 40px;
   }
 }
+
+
 /* =====================
    GLOBAL CURSOR GLOW
 ===================== */
+
 .cursor-glow {
   position: fixed;
   width: 220px;
@@ -465,3 +542,4 @@ body.dark .case-card {
   opacity: 0.8;
   transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
+~
