@@ -87,10 +87,31 @@ body::before {
 }
 
 .logo {
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
+  display: flex;
+  align-items: center;
 }
+
+/* Logo images */
+.logo img {
+  height: 28px;   /* change to 32px if you want slightly bigger */
+  width: auto;
+  display: block;
+}
+
+/* Hide dark logo by default */
+.logo-dark {
+  display: none;
+}
+
+/* Show white logo in dark mode */
+body.dark .logo-light {
+  display: none;
+}
+
+body.dark .logo-dark {
+  display: block;
+}
+
 
 .nav-right {
   display: flex;
