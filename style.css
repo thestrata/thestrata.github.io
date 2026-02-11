@@ -89,7 +89,7 @@ body::before {
 
 .logo {
   position: relative;
-  height: 46px; /* 🔥 change this to control size (48–56 ideal) */
+  height: 38px; /* 🔥 change this to control size (48–56 ideal) */
   display: inline-block;
 }
 
