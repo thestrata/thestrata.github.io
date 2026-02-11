@@ -84,39 +84,22 @@
 function toggleMode() {
   document.body.classList.toggle("dark");
 }
-  const glow = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", (e) => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
-
+/* HERO CURSOR GLOW (clean version) */
 const hero = document.querySelector(".hero");
 
 hero.addEventListener("mousemove", (e) => {
   const rect = hero.getBoundingClientRect();
-  hero.style.setProperty("--x", e.clientX - rect.left + "px");
-  hero.style.setProperty("--y", e.clientY - rect.top + "px");
-  hero.style.setProperty("--opacity", 1);
-  hero.style.setProperty("--left", e.clientX - rect.left + "px");
-  hero.style.setProperty("--top", e.clientY - rect.top + "px");
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  hero.style.setProperty("--glow-x", x + "px");
+  hero.style.setProperty("--glow-y", y + "px");
+  hero.classList.add("glow-active");
 });
 
 hero.addEventListener("mouseleave", () => {
-  hero.style.setProperty("--opacity", 0);
-});
-
-/* Hero subtle movement */
-const hero = document.querySelector(".hero");
-
-hero.addEventListener("mousemove", (e) => {
-  const x = (window.innerWidth / 2 - e.pageX) / 40;
-  const y = (window.innerHeight / 2 - e.pageY) / 40;
-  hero.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-hero.addEventListener("mouseleave", () => {
-  hero.style.transform = "translate(0,0)";
+  hero.classList.remove("glow-active");
 });
 
 /* Scroll reveal */
@@ -133,6 +116,7 @@ window.addEventListener("scroll", () => {
   });
 });
 </script>
+
 <div class="cursor-glow"></div>
 </body>
 </html>
