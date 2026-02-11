@@ -5,88 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thestrata — Growth & Content Agency</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  
+
 <header class="site-header">
   <div class="container nav">
     <div class="logo">thestrata</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+    <div class="nav-right">
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="mode-toggle" onclick="toggleMode()">☼</button>
+    </div>
   </div>
 </header>
 
-  <!-- MODE TOGGLE -->
-  <button class="mode-toggle" onclick="toggleMode()">
-    Dark mode
-  </button>
+<section class="hero">
+  <div class="container">
+    <h1>We help creators & brands grow with content that actually converts.</h1>
+    <p>Strategy, production, and distribution — done properly.</p>
+    <a href="#contact" class="btn-primary">Let’s work together</a>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>YouTube strategy that works </h1>
-      <p>Content Strategy Consultancy for brands and creators who care about outcomes </p>
-      <a href="#contact" class="btn-primary">Let’s work together</a>
-    </div>
-  </section>
+<section class="services" id="services">
+  <div class="container">
+    <h2>What we do</h2>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2>What we do</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>Content Strategy</h3>
+        <p>We design content systems built for attention and long-term growth.</p>
+      </div>
 
-      <div class="service-list">
-        <div class="service">
-          <h3>Strategise</h3>
-          <p>Audit & 1-on-1 coaching for your channel and its Content strategy</p>
-        </div>
+      <div class="service">
+        <h3>Video Production</h3>
+        <p>High-retention long-form and short-form content that performs.</p>
+      </div>
 
-        <div class="service">
-          <h3>Optimise</h3>
-          <p>Fixing your channel's SEO(Titles, description, tags) and fixing your targeted keywords</p>
-        </div>
-
-        <div class="service">
-          <h3>Grow</h3>
-          <p>Distributing, publishing and scaling your brand across platforms.</p>
-        </div>
+      <div class="service">
+        <h3>Distribution & Growth</h3>
+        <p>Publishing, optimization, and scaling across platforms.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>Why Thestrata</h2>
-      <p>
-        Most agencies chase trends. We build systems.<br>
-        Our work is grounded in strategy, not guesswork.
-      </p>
-    </div>
-  </section>
+<section class="about" id="about">
+  <div class="container">
+    <h2>Why Strata</h2>
+    <p>
+      Most agencies chase trends. We build systems.
+      Our work is grounded in strategy, not guesswork.
+    </p>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Let’s talk</h2>
-      <p>Email us at <strong>hello@thestrata.com</strong></p>
-    </div>
-  </section>
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Let’s build something serious.</h2>
+    <p>stratacontent@gmail.com</p>
+  </div>
+</section>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
+<script>
+function toggleMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
