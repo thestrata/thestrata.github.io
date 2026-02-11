@@ -41,74 +41,80 @@ body {
   to { opacity: 1; }
 }
 
-/* ===== FIXED STATIC GRADIENT (NO SCROLL MOVE) ===== */
+/* =====================
+   STRONGER TOP GRADIENT (SCROLLS AWAY NATURALLY)
+===================== */
 body::before {
   content: "";
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: -300px;
+  right: -200px;
+  width: 1200px;
+  height: 1200px;
   background: radial-gradient(
-    circle at 85% 10%,
-    rgba(204, 255, 0, 0.25) 0%,
-    rgba(204, 255, 0, 0.15) 30%,
-    transparent 60%
+    circle,
+    rgba(204,255,0,0.45) 0%,
+    rgba(204,255,0,0.25) 35%,
+    transparent 70%
   );
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
   animation: pulse 6s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 0.9; }
-  100% { opacity: 0.6; }
-}
-
-/* ===== CURSOR LIME GLOW ===== */
-body::after {
-  content: "";
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    circle,
-    rgba(204,255,0,0.25) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  transition: transform 0.08s linear;
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
 }
 
 /* =====================
-   CONTAINER
+   CURSOR GLOW (INTERACTIVE)
+===================== */
+.cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(204,255,0,0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+}
+
+/* =====================
+   CONTAINERS
 ===================== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
-/* =====================
-   NAV (LESS TOP SPACE)
-===================== */
-.site-header {
-  padding: 18px 0;   /* reduced from 28 */
-}
-
-.nav {
+/* Header has smaller margins */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px; /* smaller than rest */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* =====================
+   NAV
+===================== */
+.site-header {
+  padding: 18px 0;
+  position: relative;
+  z-index: 10;
+}
+
 /* ===== LOGO ===== */
 .logo {
   position: relative;
-  height: 52px;
+  height: 38px; /* requested size */
   display: inline-block;
 }
 
@@ -138,7 +144,11 @@ nav a {
   text-decoration: none;
   color: var(--muted);
   font-size: 15px;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--text);
 }
 
 nav a::after {
@@ -150,10 +160,6 @@ nav a::after {
   left: 0;
   bottom: -4px;
   transition: width 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--text);
 }
 
 nav a:hover::after {
@@ -169,7 +175,7 @@ nav a:hover::after {
   font-size: 14px;
   cursor: pointer;
   margin-left: 24px;
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .mode-toggle:hover {
@@ -183,10 +189,11 @@ nav a:hover::after {
 }
 
 /* =====================
-   HERO (MORE TOP SPACE)
+   HERO (INTERACTIVE)
 ===================== */
 .hero {
-  padding: 200px 0 140px;   /* increased top padding */
+  padding: 220px 0 160px;
+  position: relative;
 }
 
 .hero h1 {
@@ -195,6 +202,7 @@ nav a:hover::after {
   line-height: 1.1;
   letter-spacing: -0.03em;
   max-width: 750px;
+  transition: transform 0.3s ease;
 }
 
 .hero p {
@@ -213,12 +221,11 @@ nav a:hover::after {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.25s ease;
-  position: relative;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(204, 255, 0, 0.35);
+  box-shadow: 0 15px 40px rgba(204,255,0,0.45);
 }
 
 .btn-primary:active {
@@ -234,12 +241,12 @@ section {
 
 .services,
 .about {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0,0,0,0.02);
 }
 
 body.dark .services,
 body.dark .about {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255,255,255,0.04);
 }
 
 /* =====================
@@ -265,6 +272,11 @@ body.dark .about {
   transition: all 0.3s ease;
 }
 
+.service:hover {
+  transform: translateY(-8px);
+  background: rgba(204,255,0,0.08);
+}
+
 .service h3 {
   font-size: 20px;
   margin-bottom: 8px;
@@ -272,11 +284,6 @@ body.dark .about {
 
 .service p {
   color: var(--muted);
-}
-
-.service:hover {
-  transform: translateY(-6px);
-  background: rgba(204, 255, 0, 0.06);
 }
 
 /* =====================
