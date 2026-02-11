@@ -358,13 +358,14 @@ body.dark .about {
 
 .case-track {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   transition: transform 0.6s ease;
 }
 
 .case-card {
-  min-width: calc((100% - 80px) / 3);
-  padding: 30px;
+  flex: 0 0 calc((100% - 80px) / 3);
+  max-width: calc((100% - 80px) / 3);
+  padding: 24px; /* slightly reduced */
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 8px;
   background: rgba(0,0,0,0.02);
