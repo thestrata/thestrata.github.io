@@ -37,6 +37,8 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
+   position: relative;
+  overflow-x: hidden;
 }
 
 .container {
@@ -45,6 +47,22 @@ body {
   padding: 0 24px;
 }
 
+/* Global lime glow */
+body::before {
+  content: "";
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(204, 255, 0, 0.25) 0%,
+    rgba(204, 255, 0, 0.15) 40%,
+    transparent 70%
+  );
+  top: -300px;
+  right: -300px;
+  z-index: -1;
+}
 /* --------------------
    MODE TOGGLE
 -------------------- */
@@ -67,33 +85,6 @@ body {
   position: relative;
   padding: 160px 0 120px;
   overflow: hidden;
-}
-
-/* Lime glow background */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(
-    circle,
-    rgba(204, 255, 0, 0.25) 0%,
-    rgba(204, 255, 0, 0.15) 40%,
-    transparent 70%
-  );
-  top: -250px;
-  right: -250px;
-  z-index: 0;
-}
-
-/* Stronger glow in dark mode */
-body.dark .hero::before {
-  background: radial-gradient(
-    circle,
-    rgba(204, 255, 0, 0.35) 0%,
-    rgba(204, 255, 0, 0.2) 40%,
-    transparent 70%
-  );
 }
 
 .hero .container {
