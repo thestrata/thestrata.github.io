@@ -50,7 +50,7 @@ body {
 /* Global lime glow */
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;   /* was fixed */
   width: 800px;
   height: 800px;
   background: radial-gradient(
@@ -62,7 +62,9 @@ body::before {
   top: -300px;
   right: -300px;
   z-index: -1;
+  pointer-events: none;
 }
+
 /* --------------------
    MODE TOGGLE
 -------------------- */
