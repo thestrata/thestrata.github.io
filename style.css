@@ -42,20 +42,21 @@ body {
 }
 
 /* =====================
-   STRONGER TOP GRADIENT (SCROLLS AWAY NATURALLY)
+   STRONG TOP RIGHT GRADIENT
+   (starts from actual corner)
 ===================== */
 body::before {
   content: "";
   position: absolute;
-  top: -300px;
-  right: -200px;
-  width: 1200px;
-  height: 1200px;
+  top: -400px;
+  right: -400px;
+  width: 1400px;
+  height: 1400px;
   background: radial-gradient(
     circle,
-    rgba(204,255,0,0.45) 0%,
-    rgba(204,255,0,0.25) 35%,
-    transparent 70%
+    rgba(204,255,0,0.5) 0%,
+    rgba(204,255,0,0.28) 30%,
+    transparent 65%
   );
   z-index: -1;
   pointer-events: none;
@@ -63,24 +64,9 @@ body::before {
 }
 
 @keyframes pulse {
-  0% { opacity: 0.7; }
+  0% { opacity: 0.75; }
   50% { opacity: 1; }
-  100% { opacity: 0.7; }
-}
-
-/* =====================
-   CURSOR GLOW (INTERACTIVE)
-===================== */
-.cursor-glow {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(204,255,0,0.18) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+  100% { opacity: 0.75; }
 }
 
 /* =====================
@@ -89,14 +75,14 @@ body::before {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px; /* normal content padding */
 }
 
-/* Header has smaller margins */
+/* Header tighter */
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px; /* smaller than rest */
+  padding: 0 12px; /* much tighter */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +92,7 @@ body::before {
    NAV
 ===================== */
 .site-header {
-  padding: 18px 0;
+  padding: 14px 0;
   position: relative;
   z-index: 10;
 }
@@ -114,7 +100,7 @@ body::before {
 /* ===== LOGO ===== */
 .logo {
   position: relative;
-  height: 38px; /* requested size */
+  height: 38px;
   display: inline-block;
 }
 
@@ -185,15 +171,34 @@ nav a:hover::after {
 }
 
 .mode-toggle:active {
-  transform: scale(0.92);
+  transform: scale(0.94);
 }
 
 /* =====================
-   HERO (INTERACTIVE)
+   HERO
 ===================== */
 .hero {
   padding: 220px 0 160px;
   position: relative;
+  overflow: hidden;
+}
+
+/* HERO CURSOR GLOW (ONLY HERE) */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(204,255,0,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.hero:hover::after {
+  opacity: 1;
 }
 
 .hero h1 {
@@ -202,7 +207,6 @@ nav a:hover::after {
   line-height: 1.1;
   letter-spacing: -0.03em;
   max-width: 750px;
-  transition: transform 0.3s ease;
 }
 
 .hero p {
