@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalCards = cards.length;
 
     function updateSlider() {
-      const gap = 40; // must match CSS gap
+      const gap = 30; // must match CSS gap
       const cardWidth = cards[0].offsetWidth + gap;
       track.style.transform = `translateX(-${index * cardWidth}px)`;
     }
